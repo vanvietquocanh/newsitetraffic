@@ -1,0 +1,1 @@
+module.exports = ["ar", "sa", "sg", "id", "in", "hk", "tw", "my", "ph", "kr", "eg", "tr", "es", "ru", "jp", "vn", "br", "de", "cn", "th", "fr","ae","uk","gb","ca"];

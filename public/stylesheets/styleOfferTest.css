@@ -1,0 +1,12 @@
+body .text-value-intable {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px; }
+
+body .table-hidden-more {
+  display: none; }
+body .show-rows {
+  display: table-row; }
+
+/*# sourceMappingURL=style.css.map */

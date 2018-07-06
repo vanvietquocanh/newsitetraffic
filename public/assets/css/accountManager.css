@@ -1,0 +1,8 @@
+.btn-custom-boder{
+	border: none;
+	padding: .6em 1em;
+	transition: .5s;
+}
+.btn-custom-boder:hover{
+	background-color: #1ab394 !important;
+}

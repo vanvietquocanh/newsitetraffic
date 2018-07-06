@@ -1,0 +1,368 @@
+.i-checks label span {
+    position: relative;
+    top: 2px;
+}
+
+.os-logo {
+    opacity: 0.3;
+}
+
+.font-thin {
+    font-weight: 100;
+}
+
+.font-big {
+    font-size: 20px;
+}
+
+.required {
+    font-weight: bold;
+    color: #EC4758;
+}
+
+.opaque-xs {
+    opacity: 0.9;
+}
+
+.opaque-sm {
+    opacity: 0.7;
+}
+
+.opaque-md {
+    opacity: 0.5;
+}
+
+.opaque-lg {
+    opacity: 0.3;
+}
+
+.mini-label {
+    font-size: 10px;
+    padding: 0 5px;
+    font-weight: 600;
+    border-radius: 2px;
+    cursor: default;
+}
+a.mini-label, a .mini-label {
+    cursor: pointer;
+}
+
+.mini-label-default {
+    color: #A6A6A6;
+    background-color: #f1f1f1;
+}
+
+.mini-label-danger {
+    color: #ed5565;
+    background-color: #FFEEEE;
+}
+
+.mini-label-info {
+    color: #23c6c8;
+    background-color: #D6FDFE;
+}
+
+.mini-label-primary {
+    color: #318bc2;
+    background-color: #def3ff;
+}
+
+.mini-label-success {
+    color: #33aa90;
+    background-color: #d7fbf3;
+}
+
+.mini-label-warning {
+    color: #DC923E;
+    background-color: #fff2e4;
+}
+
+.tickets-conversation blockquote {
+    font-size: 14px;
+}
+
+.tickets-conversation blockquote footer {
+    color: #bbb;
+}
+
+.tickets-conversation blockquote.red {
+    border-color: #EC4758;
+}
+
+.tickets-conversation blockquote.blue {
+    border-color: #1C84C6;
+}
+
+tr.offer-row td, tr.ticket-row td {
+    cursor: pointer;
+}
+
+tr.ticket-row .ticket-title {
+    line-height: 30px;
+    font-size: 118%;
+    margin-right: 7px;
+}
+
+tr.ticket-row .text-muted {
+    color: #bbb;
+}
+
+tr.ticket-row .ticket-title.answered {
+    font-weight: bold;
+}
+
+.offer-thumb {
+    width: 70px;
+}
+
+.offer-thumb img {
+    width: 60px;
+}
+
+ul.allowed-traffic, ul.restricted-traffic {
+    padding: 0;
+    margin: 0;
+}
+
+ul.allowed-traffic li, ul.restricted-traffic li {
+    list-style-type: none;
+}
+
+ul.allowed-traffic li, ul.restricted-traffic li {
+    list-style-type: none;
+}
+
+ul.allowed-traffic li i {
+    color: #18A689;
+}
+
+ul.restricted-traffic li i {
+    color: #ED5565;
+}
+
+.sidebar-collapse input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #158C74 !important;
+}
+
+.sidebar-collapse input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #158C74 !important;
+    opacity: 1;
+}
+
+.sidebar-collapse input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #158C74 !important;
+    opacity: 1;
+}
+
+.sidebar-collapse input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #158C74 !important;
+}
+
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #aaa !important;
+}
+
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #aaa !important;
+    opacity: 1;
+}
+
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #aaa !important;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #aaa !important;
+}
+
+#offer-filter-toggle {
+    cursor: pointer;
+}
+
+.ibox-title {
+    border-color: #D5E5EF;
+}
+
+.ibox-title.blue {
+    background-color: #1c84c6;
+    color: #ffffff;
+}
+
+.ibox-title.blue small, .ibox-title.blue .ibox-tools, .ibox-title.blue .ibox-tools a {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.daterangepicker .calendar th, .daterangepicker .calendar td {
+    font-family: inherit;
+}
+
+/* chosen restyle */
+.chosen-container-multi .chosen-choices {
+    border-radius: 0;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+    font-family: inherit;
+    color: #aaa;
+}
+
+.chosen-container-multi .chosen-choices {
+    border: 1px solid #e5e6e7;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+    background-image: none;
+    background-color: #F1F1F1;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    opacity: 0.5;
+}
+
+.chosen-container-active .chosen-choices {
+    box-shadow: none;
+    border: 1px solid #18A689;
+}
+
+.chosen-container .chosen-results li.highlighted {
+    background-image: none;
+    background-color: #1C84C6;
+}
+
+.chosen-container-single .chosen-single {
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid #e5e6e7;
+    cursor: default;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+    background: #fff;
+}
+
+.preview-link {
+    color: rgba(24, 166, 137, 0.7);
+}
+
+.preview-link:hover, .preview-link:focus, .preview-link:active {
+    color: rgba(24, 166, 137, 1);
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    border-bottom: #fff 1px solid;
+}
+
+.badge {
+    font-size: 10px;
+}
+
+.datepicker * {
+    font-family: 'open sans';
+}
+
+.note-editor {
+    border: 1px solid #eee;
+}
+
+.scrollbar-measure {
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
+    font-size: 14px;
+    float: none;
+    margin-left: 7px;
+}
+
+table.dataTable thead .sorting:after {
+    content: "";
+}
+
+table.dataTable thead .sorting {
+    color: #888;
+}
+
+table.dataTable thead .sorting:hover {
+    color: #555;
+}
+
+table.dataTable thead .sorting:hover:after {
+    content: "";
+    opacity: 0.5;
+}
+
+table.dataTable thead .sorting_asc {
+    background: none;
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "";
+}
+
+.row-hover:hover {
+    background-color: #efefef;
+}
+
+table.fixed-header thead {
+    background-color: #fff;
+}
+
+.fa {
+    font-size: 14px;
+}
+
+[data-field="app-platform"] .fa {
+    font-size: 28px;
+}
+
+.w-terms {
+    padding: 1px 4px;
+    cursor: default;
+}
+
+.w-terms a,
+.w-terms a:hover,
+.w-terms a:focus,
+.w-terms a:active {
+    color: #fff;
+}
+
+.comment {
+    color: #5F2020;
+    font-size: 10px;
+    display: block;
+    opacity: 0.8;
+    float: left;
+    margin-top: 7px;
+    padding: 2px 4px;
+    background-color: rgb(255, 235, 235);
+    border: 1px solid rgb(255, 208, 208);
+}
+
+.comment i {
+    color: #5F2020;
+    margin-right: 5px;
+}
+
+.stat-refresh {
+    cursor: pointer;
+}

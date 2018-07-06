@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalble=no">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <title>Adminto - <%-name%></title>
+        <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="assets/css/components.css" rel="stylesheet" type="text/css" /> -->
+        <script src="assets/js/modernizr.min.js"></script>
+    </head>
+    <body class="fixed-left">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <a href="/dashboard" class="logo"><span>Rocket<span>Traffic</span></span><i class="zmdi zmdi-layers"></i></a>
+                </div>
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container" style="background: rgba(235, 239, 242, 0.5)">
+
+                        <!-- Page title -->
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <button id="btn-left-right" class="button-menu-mobile open-left">
+                                    <i class="fa fa-angle-double-left"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <h4 class="page-title">Advertiser</h4>
+                            </li>
+                        </ul>
+                        <!-- Right(Notification and Searchbox -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <!-- Notification -->
+                                <div class="notification-box">
+                                    <ul class="list-inline m-b-0">
+                                        <li>
+                                            <a href="#" class="right-bar-toggle">
+                                                <i class="zmdi zmdi-notifications-none"></i>
+                                            </a>
+                                            <div class="noti-dot">
+                                                <span class="dot"></span>
+                                                <span class="pulse"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- End Notification bar -->
+                            </li>
+                        </ul>
+
+                    </div><!-- end container -->
+                </div><!-- end navbar -->
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+
+                    <!-- User -->
+                    <div class="user-box">
+                        <div class="user-img">
+                            <img src="<%-avatar%>" alt="user-img" title="<%-name%>" class="img-circle img-thumbnail img-responsive">
+                            <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
+                        </div>
+                        <h5><a href="#"><%-name%></a> </h5>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="/logout" class="text-custom" id="btn-logout">
+                                    <i class="zmdi zmdi-power"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End User -->
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <ul>
+                          <li class="text-muted menu-title">Navigation</li>
+                            <%-admin%>
+                             <li class="parent parent-focus"><a><i class="fa fa-suitcase"></i> <span>Offers</span></a>
+                                <ul class="children">
+                                    <li>
+                                        <a href="/offers?page=1" class="waves-effect"><i class="fa fa-list" hidden="true"></i> <span> All Offers </span> </a>
+                                    </li>
+                                    <%-myOffer%>
+                                    <%- addOffer%>
+                                    <li>
+                                        <a href="/offerstest" target="_blank" class="waves-effect subdrop"><i class="fa fa-check" hidden="true"></i> <span> Test Offers </span> </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <a href="/reportclick" class="waves-effect"><i class="fa fa-file-text-o" aria-hidden="true"></i><span> Report Click </span></span></a>
+                            </li>
+                            <li class="has_sub">
+                                <a href="/conversion" class="waves-effect"><i class="fa fa-usd"></i><span> Conversions </span></a>
+                            </li>
+                            <%-icon%>
+                            <%-download%>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
+            <!-- Left Sidebar End -->
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page custom-content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container" id="ele-add-Form-search">
+                        <!-- end row -->
+                        <div class="row" style="width: 101.5%">
+                            <div class="col-lg-12">
+                                <div class="panel-heading handle-flex cust-panel-heading">
+                                    <li class="char-nav-blue" style="flex-grow: 1; list-style:none;"><p style="color:#fff; line-height: 3em; margin-bottom: 0px;"> Advertiser Manager</p></li>
+                                    <input autocomplete="off" type="text" name="page" value="1" style="display:none;">                              
+                                </div>
+                                <div class="panel panel-color panel-tabs panel-success">
+                                    <div class="panel-body fixbody" style="background: #fff">
+                                        <div class="tab-content">
+                                            <div id="navpills-1" class="tab-pane fade in active">
+                                                <div class="row" >
+                                                    <div class="col-md-12">
+                                                        <p>
+                                                        <script type="text/javascript" charset="utf-8" async defer>
+                                                        <%if(errors){%>
+                                                                alert("<%-errors%>")
+                                                        <%}%>
+                                                        </script>
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <div class="">                                                                         
+                                                                        <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                                <div class="container-search">
+                                                                                        <div class='content-search first-cnt-search fix-adv' style="flex-wrap: wrap">
+                                                                                            <!-- <%Object.keys(search).forEach((ele,i)=>{%>
+                                                                                                <%if(ele!=="search"&&ele!=="page"&&ele!=="sort"&&ele!=="offertype"){%>
+                                                                                                    <input autocomplete="off" type="" class="no-visible-page" name="<%-ele%>" value="<%-search[ele]%>" style="display: none;">
+                                                                                                <%}%>
+                                                                                            <%})%> -->
+                                                                                            <input autocomplete="off" type="" name="page" value="1" style="display: none;">
+                                                                                            <div style="display: flex; flex-grow:1; width: max-content">
+                                                                                                <input autocomplete="off" type="search" class="ip-searchfix ip-searchfix-first" id="search" placeholder="Network Name...." aria-controls="datatable-responsive" name="search">
+                                                                                                <button id="btn-search" type="submit" class="form-control input-sm custom-Search"><i class="fa fa-search" style="color: #fff"></i></button>
+                                                                                            </div>
+                                                                                            <button type="button" class="btn btn-info btn-lg resize-btn-addnet" data-toggle="modal" data-target="#myModal" style="margin-left: .5em;height: 1.8em; line-height: .7em; background: #1c84c6">Add Network</button>
+                                                                                            <button type="button" class="btn btn-info btn-lg resize-btn-addnet" id="requestOffers" style="margin-left: .5em;height: 1.8em; line-height: .7em; background: #1c84c6">Request</button>
+                                                                                            <button type="button" class="btn btn-info btn-lg resize-btn-addnet" id="removeOffers" style="margin-left: .5em;height: 1.8em; line-height: .7em; background: #1c84c6">Remove</button>
+                                                                                            <button type="button" class="btn btn-info btn-lg resize-btn-addnet" id="selectAll" style="margin-left: .5em;height: 1.8em; line-height: .7em; background: #1c84c6">Select All</button>
+                                                                                              <div class="modal fade" id="myModal" role="dialog" style="z-index: 1000000">
+                                                                                                <div class="modal-dialog">
+                                                                                                  <div class="modal-content" style="">
+                                                                                                    <div class="modal-header">
+                                                                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                                      <h4 class="modal-title" style="">Enter Infomation Network</h4>
+                                                                                                    </div>
+                                                                                                    <div class="modal-body">
+                                                                                                      <form method="post" action="/addnetwork" id="formAddNet" accept-charset="utf-8">
+                                                                                                        <div class="input-group">
+                                                                                                          <span class="input-group-addon" style="width: 40px;"><i class="fa fa-joomla"></i></span>
+                                                                                                          <input autocomplete="off" id="networkName" type="text" class="form-control" name="name" placeholder="Network Name">
+                                                                                                        </div>
+                                                                                                        <div class="input-group">
+                                                                                                          <span class="input-group-addon" style="width: 40px;"><i class="fa fa-envelope"></i></span>
+                                                                                                          <input autocomplete="off" id="emailadd" type="email" class="form-control" name="email" placeholder="Email (Register on that network)">
+                                                                                                        </div>
+                                                                                                        <div class="input-group">
+                                                                                                          <span class="input-group-addon" style="width: 40px;"><i class="glyphicon glyphicon-user"></i></span>
+                                                                                                          <input autocomplete="off" id="password" type="text" class="form-control" name="password" placeholder="Password( Register on that Network)">
+                                                                                                        </div>
+                                                                                                        <div class="input-group">
+                                                                                                          <span class="input-group-addon" id="change-type-chat" style="width: 40px;"><i class="fa fa-weixin"></i></span>
+                                                                                                          <input autocomplete="off" id="IM" type="text" class="form-control" name="wechatIM" placeholder="IM (Skype, Wechat)">
+                                                                                                        </div>
+                                                                                                        <div class="input-group">
+                                                                                                          <span class="input-group-addon" style="width: 40px;"><i class="fa fa-skype"></i></span>
+                                                                                                          <input autocomplete="off" id="AM" type="text" class="form-control" name="AM" placeholder="AM (Who coworking with ) (Skype)">
+                                                                                                        </div>
+                                                                                                        <div class="input-group" id="api_path-0">
+                                                                                                          <span class="input-group-addon" style="width: 40px;"><i class="fa fa-link"></i></span>
+                                                                                                          <input autocomplete="off" id="linkAPI" type="text" class="form-control" name="link" placeholder="Link API">
+                                                                                                        </div>
+                                                                                                        <div class="input-group">
+                                                                                                          <span class="input-group-addon" style="width: 40px;"><i class="fa fa-reply"></i></span>
+                                                                                                          <input autocomplete="off" id="postbackadd" type="text" class="form-control" name="postback" placeholder="postback">
+                                                                                                        </div>
+                                                                                                        <div class="input-group" style="margin-bottom: 0;">
+                                                                                                          <span class="input-group-addon" style="width: 40px;"><i class="fa fa-align-left"></i></span>
+                                                                                                            <textarea name="description" class="descriptionAdd" id="descriptionAdd" placeholder="Description"></textarea>
+                                                                                                        </div>
+                                                                                                        <input autocomplete="off" type="text" name="status" value="inactive" style="display: none;"/>
+                                                                                                        <div class="rows" style="display: flex">
+                                                                                                            <span class="input-group-addon" style="width: 40px;padding-top: .8em"><i class="fa fa-hand-pointer-o"></i></span>
+                                                                                                            <select class="col-md- mb-3 custom-select d-block w-100 pull-right form-control" id="me" name="method" required="" style="border: 1px solid rgba(100, 100, 100, 1); margin-bottom: .5em; color: #6f7981;">
+                                                                                                              <option value="">Choose Method</option>
+                                                                                                              <option value="GET">GET</option>
+                                                                                                              <option value="POST">POST</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                        <div class="rows" style="display: flex">
+                                                                                                            <span class="input-group-addon" style="width: 40px;padding-top: .8em"><i class="fa fa-clone"></i></span>
+                                                                                                            <div style="display : flex; width:100%; flex-wrap: wrap; margin-bottom: 2em;" id="ele-type-network">
+                                                                                                                <select class="col-md- mb-3 custom-select d-block w-100 pull-right form-control" id="type-net" name="type" required="" style="border: 1px solid rgba(100, 100, 100, 1); color: #6f7981; margin-bottom : .5em;">
+                                                                                                                  <option value="">Choose Type</option>
+                                                                                                                  <option value="appflood">Appflood</option>
+                                                                                                                 <!--  <option value="adattract">Adattract</option> -->
+                                                                                                                  <option value="hasoffer">HasOffer</option>
+                                                                                                                  <option value="orangear">Orangear</option>
+                                                                                                                </select>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                            <button type="submit" style="display: none;" id="submitFormAddNet"></button>
+                                                                                                      </form>
+                                                                                                    </div>
+                                                                                                    <div class="modal-footer">
+                                                                                                        <button type="button" class="btn btn-default" id="clickCurrent">Add Network</button>
+                                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                  
+                                                                                                </div>
+                                                                                              </div>
+                                                                                              
+                                                                                        </div>
+                                                                                    <!-- </form> -->
+                                                                                    <div class='content-search last-cnt-search'>
+                                                                                    </div>
+                                                                                </div>
+                                                                                    <section class="md-content-section">
+                                                                                        <md-toolbar md-scroll-shrink="" class="md-accent md-default-theme" style="transform: translate3d(0px, 0px, 0px);"></md-toolbar>
+                                                                                            <md-content class="md-default-theme" scroll-shrink="true" style="margin-top: -25px; margin-bottom: -25px; transform: translate3d(0px, 25px, 0px);">
+                                                                                                <div class="md-content__body">
+                                                                                                  <table class="table">
+                                                                                                    <thead>
+                                                                                                    <tr>
+                                                                                                      <th class="bdb-1px">#</th>
+                                                                                                      <th class="bdb-1px">Network</th>
+                                                                                                      <th class="bdb-1px">Status</th>
+                                                                                                      <th class="bdb-1px" style="display: flex"><i class="pd-left fa fa-skype" style="padding-right: 1em; line-height: 1.5em; color : #4CACEC"></i> Affiliate Manager</th>
+                                                                                                      <th class="bdb-1px">Revenue today</th>
+                                                                                                      <th class="bdb-1px" style="text-align: center">Options</th>
+                                                                                                      <th class="bdb-1px" style="text-align: center">Select</th>
+                                                                                                    </tr>
+                                                                                                    </thead>
+                                                                                                    <tbody>
+                                                                                                    <%data.forEach((e,i)=>{%>
+                                                                                                        <tr class="show-full-details" id="<%-e.index%>" style="cursor: pointer;" data-toggle="modal" data-target="#details-<%-i%>">
+                                                                                                          <td style="display: none;"><%-e._id%></td>
+                                                                                                          <td><%-i+1%></td>
+                                                                                                          <td><%-e.name%></td>
+                                                                                                          <td><span class="label label-warning"><%-e.status%></span></td>
+                                                                                                          <td><a class="call-skype" href="skype:<%-e.AM%>?call"><%-e.AM%></a></td>
+                                                                                                          <td>
+                                                                                                                <span title="0%">
+                                                                                                                    <div class="progressbar-xs no-margin progress ng-isolate-scope" value="55">
+                                                                                                                            <div id="<%-e.name%>" class="progress-bar" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="55%" ng-transclude="" style="width: 0%;">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                                </span>
+                                                                                                            </td>
+                                                                                                            <td class="text-center">
+                                                                                                                <div style="display:flex; justify-content: center;">
+                                                                                                                    <button class="bg-danger btn-custom-boder del-btn" style="margin-right: 1em; border: none;"><i style="color: #fff" class="fa fa-trash-o"></i></button>
+                                                                                                                    <button class="bg-primary btn-custom-boder req-btn" style="margin-right: 1em; border: none; background: #e67e22 !important"><i style="color: #fff" class="fa fa-shopping-cart"></i></button>
+                                                                                                                    <button class="bg-success btn-custom-boder details-btn" style="border: none;"><i style="color: #fff" class="fa fa-bars"></i></button>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td class="text-center">
+                                                                                                                <input autocomplete="off" class="checkbox-group" id="checkbox-1" type="checkbox" name="network" value="<%-e._id%>">
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    <%})%>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </md-content>
+                                                                                    </section>
+                                                                                </li>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- end col -->
+                                                            </div>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+                    
+                <footer class="footer text-right">
+                    2017 © Van Viet Quoc Anh
+                </footer>
+
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+            <!-- Right Sidebar -->
+            <div class="side-bar right-bar">
+                <a href="javascript:void(0);" class="right-bar-toggle">
+                    <i class="zmdi zmdi-close-circle-o"></i>
+                </a>
+                <h4 class="">Notifications</h4>
+                <div class="notification-list nicescroll">
+                    <ul class="list-group list-no-border user-list">
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-2.jpg" alt="">
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">Michael Zenaty</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">2 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-info">
+                                    <i class="zmdi zmdi-account"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">New Signup</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">5 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-pink">
+                                    <i class="zmdi zmdi-comment"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">New Message received</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">1 day ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a href="#" class="user-list-item">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-3.jpg" alt="">
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">James Anderson</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">2 days ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-warning">
+                                    <i class="zmdi zmdi-settings"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">Settings</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">1 day ago</span>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="full-info" id="full-details">
+            <div class="bgr-details" id="bgr-details-show">
+                <header class="full-info-header">
+                    <ul class="full-info-header-title"><h4 class="">Quick info <small class="full-info-header-small">To view full details click "Offer details" button below</small></h4></ul>
+                    <i class="fa fa-close" id="close-details-app"></i>
+                </header>
+                <div class="full-info-container">
+                    <div class="full-info-container-content">
+                        <p id="objectID" style="display: none"></p>
+                        <h3 class="full-info-container-content-title"><span class="max-line" id="index-network"></span><a target="_blank" id="name-title" href=""></a></h3>
+                    </div>
+                    <div class="full-info-container-description">
+                        <p id="set-description">No Description</p>
+                    </div>
+                    <div class="flex-items-content">
+                        <div class="full-info-container-infomation">
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left net-fix-list-left"><i class="pd-left fa fa-envelope" style="color: #ca4943;"></i> &emsp;Email</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="email"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left net-fix-list-left" id="icon-chat"></span>
+                                    <span class="full-info-conatainer-content-info-block-list-right hidden-text-wrap" id="chatIM"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left net-fix-list-left"><i class="pd-left fa fa-skype" style="color: #4CACEC"></i>&emsp;Skype AM</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="AM-chat"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left net-fix-list-left"><i class="pd-left fa fa-reply" style="color: #34495e"></i>&emsp;Postback</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="postback"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left net-fix-list-left"><i class="pd-left fa fa-flask" style="color: orange;"></i>&emsp;Method</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="method"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left net-fix-list-left"><i class="pd-left fa fa-magic" style="color: #009688"></i>&emsp;Type Network</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="type"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left net-fix-list-left"><i class="pd-left fa fa-link" style="color: blue;"></i>&emsp;Link API</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right hidden-text-wrap" id="link"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block" style="margin-bottom: 1em;">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left net-fix-list-left"><i class="fa fa-bar-chart" style="color: #e74c3c; line-height: 2em;"></i>&emsp;Total offer:</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="total"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="restricted-right">
+                            <ul class="restricted-traffic">
+                                <h6 class="restricted-traffic-title">Restricted traffic</h6>
+                                <ul class="restricted-traffic-content">
+                                    <li class="restricted-traffic-content-list"><i class="fa fa-close text-red pd-right-1"></i>Adult traffic</li>
+                                    <li class="restricted-traffic-content-list"><i class="fa fa-close text-red pd-right-1"></i>Incentivized traffic</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-info-footer">
+                    <button class="btn-full-info close-btn" id="close-btn"><i class="fa fa-close pd-right"></i> Close</button>
+                    <button class="btn-full-info off-detail" id="net-detail"><i class="fa fa-bars pd-right"></i> Details</button>
+                    <button class="btn-full-info request-offer netw-btn-details"><i class="fa fa-shopping-cart pd-right"></i> Request </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <!-- KNOB JS -->
+        <!--[if IE]>
+        <script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
+        <![endif]-->
+        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+        <!--Morris Chart-->
+        <script src="assets/plugins/morris/morris.min.js"></script>
+        <script src="assets/plugins/raphael/raphael-min.js"></script>
+
+        <!-- Dashboard init -->
+        <!-- <script src="assets/pages/jquery.dashboard.js"></script> -->
+
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script> -->
+        <script src="./assets/js/customs/advertiser.js"></script>
+        <script src="./javascripts/goToTop.js"></script>
+    </body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalble=no">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <title>Adminto - <%-name%></title>
+    <link rel="stylesheet" href="../assets/plugins/morris/morris.css">
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/custom.css" rel="stylesheet" type="text/css" />
+        <script src="../assets/js/modernizr.min.js"></script>
+    </head>
+    <body class="fixed-left">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <a href="/dashboard" class="logo"><span>Rocket<span>Traffic</span></span><i class="zmdi zmdi-layers"></i></a>
+                </div>
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container" style="z-index: 1000; background: rgba(235, 239, 242, 0.5)">
+
+                        <!-- Page title -->
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <button id="btn-left-right" class="button-menu-mobile open-left">
+                                    <i class="fa fa-angle-double-left"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <h4 class="page-title"><%-title%></h4>
+                            </li>
+                        </ul>
+                        <!-- Right(Notification and Searchbox -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <!-- Notification -->
+                                <div class="notification-box">
+                                    <ul class="list-inline m-b-0">
+                                        <li>
+                                            <a href="#" class="right-bar-toggle">
+                                                <i class="zmdi zmdi-notifications-none"></i>
+                                            </a>
+                                            <div class="noti-dot">
+                                                <span class="dot"></span>
+                                                <span class="pulse"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- End Notification bar -->
+                            </li>
+                        </ul>
+
+                    </div><!-- end container -->
+                </div><!-- end navbar -->
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+
+                    <!-- User -->
+                    <div class="user-box">
+                        <div class="user-img">
+                            <img src="<%-avatar%>" alt="user-img" title="<%-name%>" class="img-circle img-thumbnail img-responsive">
+                            <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
+                        </div>
+                        <h5><a href="#"><%-name%></a> </h5>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="/logout" class="text-custom" id="btn-logout">
+                                    <i class="zmdi zmdi-power"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End User -->
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <ul>
+                          <li class="text-muted menu-title">Navigation</li>
+                            <%-admin%>
+                             <li class="parent parent-focus"><a><i class="fa fa-suitcase"></i> <span>Offers</span></a>
+                                <ul class="children">
+                                    <li>
+                                        <a href="/offers?page=1" class="waves-effect"><i class="fa fa-list" hidden="true"></i> <span> All Offers </span> </a>
+                                    </li>
+                                    <%-myOffer%>
+                                    <%- addOffer%>
+                                    <li>
+                                        <a href="/offerstest" target="_blank" class="waves-effect subdrop"><i class="fa fa-check" hidden="true"></i> <span> Test Offers </span> </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <a href="/reportclick" class="waves-effect"><i class="fa fa-file-text-o" aria-hidden="true"></i><span> Report Click </span></span></a>
+                            </li>
+                            <li class="has_sub">
+                                <a href="/conversion" class="waves-effect"><i class="fa fa-usd"></i><span> Conversions </span></a>
+                            </li>
+                            <%-icon%>
+                            <%-download%>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
+            <!-- Left Sidebar End -->
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page custom-content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container" id="ele-add-Form-search">
+                        <!-- end row -->
+                        <div class="row row-fix-res-width">
+                            <div class="col-lg-12">
+                                <div class="panel-heading handle-flex cust-panel-heading">
+                                   <!--  <li class="char-nav-blue" style="flex-grow: 1; list-style:none;"><p style="color:#fff; line-height: 3em; margin-bottom: 0px;"> Browse offers</p><p style="margin-top: 0; margin-left: 1em; font-weight: 100; font-size:12px; color: #cee1ef; line-height: 3.7em; margin-bottom: 0px;"> Click on the thumbnail to see offer's quick info</p></li>
+                                    <input type="text" name="page" value="1" style="display:none;">                              
+                                    <a href="#form-advance-filter" id="filter" class="filter"><i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;Search</a>
+                                    <!-- <a id="do  wnload">
+                                    <div class="button-refresh downloadbtn" id="download-btn">
+                                        <i class="fa fa-download"></i>  Download
+                                    </div></a> -->
+                                </div>
+                                <div class="panel panel-color panel-tabs panel-success">
+                                    <div class="panel-body fixbody" style="background: #fff">
+                                        <div class="tab-content">
+                                            <div id="navpills-1" class="tab-pane fade in active">
+                                                <div class="row" >
+                                                    <div class="col-md-12">
+                                                        <div class="container-details-header">
+                                                            <div class="container-details-header-nav">
+                                                                <h2 class="title-app">Polishop: Comprar Online na melhor loja virtual (Android 4.1+) BR - Non incent</h2>
+                                                                <span class="sp-offer-id">Offer #4211829</span>
+                                                                <li class="payList-header"><span class="payList-header-null"></span><span class="payList-header-notNull">$ 4.4</span></li>
+                                                            </div>
+                                                            <div class="container-details-header-content">
+                                                                <h6 class="container-details-header-content-title">KPI:</h6>
+                                                                <li class="container-details-header-content-list">
+                                                                    <div class="container-details-header-content-container">
+                                                                        <h6 class="container-details-header-content-list-content">Day 1 Retention Rate: min 30 %</h6>
+                                                                        <h6 class="container-details-header-content-list-content">| Day 7 Retention Rate: min 10 %</h6>
+                                                                        <h6 class="container-details-header-content-list-content">| Require purchase rate after 2 weeks</h6>
+                                                                    </div>
+                                                                    <div class="container-details-header-content-container container-img">
+                                                                        <ul class="bgr-thumbnails-app">
+                                                                            
+                                                                        </ul>
+                                                                    </div>
+                                                                </li>
+                                                                <ul class="container-details-userflow">
+                                                                    <h6 class="container-details-userflow-title">User Flow:</h6>
+                                                                    <li class="container-details-userflow-list">
+                                                                        <p class="container-details-userflow-task">1. User clicks on banner and is redirected to Google Play or the App Store.</p>
+                                                                    </li>
+                                                                    <li class="container-details-userflow-list">
+                                                                        <p class="container-details-userflow-task">2. User successfully downloads and installs the application.</p>
+                                                                    </li>
+                                                                    <li class="container-details-userflow-list">
+                                                                        <p class="container-details-userflow-task">3. User opens the application for the first time.</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="container-details-promotion">
+                                        <h1 class="container-details-promotion-title">Offer promotion</h1>
+                                        <div class="container-details-promotion-content">
+                                            <div class="container-details-promotion-content-sub">
+                                                <h5 class="container-details-promotion-content-title">Creative packages</h5>
+                                                <p class="container-details-promotion-content-sub-txt">No creatives found.</p>
+                                            </div>
+                                            <div class="container-details-promotion-content-sub details-promotion-grow">
+                                                <ul class="container-details-promotion-content-sub-request">
+                                                    <button class="container-details-promotion-content-sub-request-btn"><i class="fa fa-shopping-cart"></i> Request offer</button>
+                                                    <p class="container-details-promotion-content-sub-request-txt">This offer requires approval.</p>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-details-specification">
+                                        <h1 class="container-details-promotion-title">Offer specification</h1>
+                                        <div class="container-details-promotion-content fix-details">
+                                            <div class="full-info-container-infomation">
+                                                <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Offer ID</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right" id="setIndex">#4211829</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Payout</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right" id="setPay">$4.40</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Platforms</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right" id="setPlatform">Android</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Geography</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right hidden-text-wrap" id="setCountry">BR</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Categories</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right" id="setCategory">Game</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Expiration date</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right">2019-05-21 <span class="country-fix country-box">364 days left</span></span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Daily cap</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right">50</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Monthly cap</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right">n/a</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="full-info-conatainer-content-info-block">
+                                                    <li class="full-info-conatainer-content-info-block-list">
+                                                        <span class="full-info-conatainer-content-info-block-list-left">Preview offer</span>
+                                                        <span class="full-info-conatainer-content-info-block-list-right"><a class="color-green prelink" target="_blank" id="setPrevLink" href="">Preview  <i class="fa fa-external-link-square"></i></a></span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="Goals">
+                                                    Goals <a class="box-green">!</a>
+                                                    <div class="hidden-Goals">
+                                                        <h5>Registration</h5>
+                                                        <ul>
+                                                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                                <li class="full-info-conatainer-content-info-block-list">
+                                                                    <span class="full-info-conatainer-content-info-block-list-left">Payout</span>
+                                                                    <span class="full-info-conatainer-content-info-block-list-right" id="payoutSet-2">$4.00</span>
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                                                <li class="full-info-conatainer-content-info-block-list">
+                                                                    <span class="full-info-conatainer-content-info-block-list-left">Geography</span>
+                                                                    <span class="full-info-conatainer-content-info-block-list-right" id="country-Set-2"></span>
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="full-info-conatainer-content-info-block">
+                                                                <li class="full-info-conatainer-content-info-block-list">
+                                                                    <span class="full-info-conatainer-content-info-block-list-left">Platforms</span>
+                                                                    <span class="full-info-conatainer-content-info-block-list-right" id="platform-set-2"></span>
+                                                                </li>
+                                                            </ul>
+                                                        </ul>
+                                                    </div>
+                                                </ul>
+                                            </div>
+                                            <div class="restricted-right">
+                                                <ul class="restricted-traffic">
+                                                    <h6 class="restricted-traffic-title">Restricted traffic</h6>
+                                                    <ul class="restricted-traffic-content">
+                                                        <li class="restricted-traffic-content-list"><i class="fa fa-close text-red pd-right-1"></i>Adult traffic</li>
+                                                        <li class="restricted-traffic-content-list"><i class="fa fa-close text-red pd-right-1"></i>Incentivized traffic</li>
+                                                    </ul>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-details-recent">
+                                        <h6 class="container-details-recent-title">Recent offers</h6>
+                                        <div class="container-details-recent-content">
+                                            <h5 class="null-variable">No recent offers</h5>
+                                            <img class="images-recent-details" src="" alt="">
+                                            <h5 class="title-related">Related offers</h5>
+                                        </div>
+                                        <div class="container-details-recent-content">
+                                            <img class="images-recent-details" src="http://publisher.tapgerine.net/creatives/Of6TJm5DaGrd17NuvVb9RgqVYuE8WWg8wfo3vZTI" alt="">
+                                        </div>
+                                        <div class="container-details-recent-content pos-similar">
+                                            <h5 class="similar-title">Similar offers</h5>
+                                            <div class="similar-title-content">
+                                                <img class="similar-title-content-images images-recent-details" src="http://publisher.tapgerine.net/creatives/RdOC8U3yi8SIvImsHOVemwhMjFZVHYKgp7pAC4GU" alt="">
+                                                <img class="similar-title-content-images images-recent-details" src="http://publisher.tapgerine.net/creatives/Of6TJm5DaGrd17NuvVb9RgqVYuE8WWg8wfo3vZTI" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+                    
+                <footer class="footer text-right">
+                    <a href="mailto:vanvietquocanhanh@hotmail.com" style="text-decoration: none">2017 © Van Viet Quoc Anh</a>
+                </footer>
+
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+            <!-- Right Sidebar -->
+            <div class="side-bar right-bar">
+                <a href="javascript:void(0);" class="right-bar-toggle">
+                    <i class="zmdi zmdi-close-circle-o"></i>
+                </a>
+                <h4 class="">Notifications</h4>
+                <div class="notification-list nicescroll">
+                    <ul class="list-group list-no-border user-list">
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="avatar">
+                                    <img src="../assets/images/users/avatar-2.jpg" alt="">
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">Michael Zenaty</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">2 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-info">
+                                    <i class="zmdi zmdi-account"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">New Signup</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">5 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-pink">
+                                    <i class="zmdi zmdi-comment"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">New Message received</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">1 day ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a href="#" class="user-list-item">
+                                <div class="avatar">
+                                    <img src="../assets/images/users/avatar-3.jpg" alt="">
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">James Anderson</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">2 days ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-warning">
+                                    <i class="zmdi zmdi-settings"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">Settings</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">1 day ago</span>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- /Right-bar -->
+
+        </div>
+        <!-- END wrapper -->
+        <div class="full-info" id="full-details">
+            <div class="bgr-details" id="bgr-details-show">
+                <header class="full-info-header">
+                    <ul class="full-info-header-title"><h4 class="">Quick info <small class="full-info-header-small">To view full details click "Offer details" button below</small></h4></ul>
+                    <i class="fa fa-close" id="close-details-app"></i>
+                </header>
+                <div class="full-info-container">
+                    <div class="full-info-container-content">
+                        <h3 class="full-info-container-content-title" id="index-app"><a id="name-app-val"></a></h3>
+                        <div class="container-img">
+                            <img class="img-content" id="set-img" src="" alt="thumbnail-app">
+                        </div>
+                    </div>
+                    <div class="full-info-container-description">
+                        <!-- <h6>It's ABOUT YOU - hier geht's um Dich!</h6> -->
+                        <p id="set-description"></p>
+                    </div>
+                    <div class="flex-items-content">
+                        <div class="full-info-container-infomation">
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left">Payout</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="setPay"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left">Platforms</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="setPlatform"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left">Geography</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right hidden-text-wrap" id="setCountry"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left">Categories</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right" id="setCategory"></span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left">Approval</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right">Required</span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left">Date start/end</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right">2018/05/18 - 2021/12/30</span>
+                                </li>
+                            </ul>
+                            <ul class="full-info-conatainer-content-info-block">
+                                <li class="full-info-conatainer-content-info-block-list">
+                                    <span class="full-info-conatainer-content-info-block-list-left">Landing page</span>
+                                    <span class="full-info-conatainer-content-info-block-list-right"><a class="color-green prelink" target="_blank" id="setPrevLink" href="">Preview  <i class="fa fa-external-link-square"></i></a></span>
+                                </li>
+                            </ul>
+                            <ul class="Goals">
+                                Goals <a class="box-green">!</a>
+                                <div class="hidden-Goals">
+                                    <h5>Registration</h5>
+                                    <ul>
+                                        <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                            <li class="full-info-conatainer-content-info-block-list">
+                                                <span class="full-info-conatainer-content-info-block-list-left">Payout</span>
+                                                <span class="full-info-conatainer-content-info-block-list-right" id="payoutSet-2">$4.00</span>
+                                            </li>
+                                        </ul>
+                                        <ul class="full-info-conatainer-content-info-block border-bot-box">
+                                            <li class="full-info-conatainer-content-info-block-list">
+                                                <span class="full-info-conatainer-content-info-block-list-left">Geography</span>
+                                                <span class="full-info-conatainer-content-info-block-list-right" id="country-Set-2"></span>
+                                            </li>
+                                        </ul>
+                                        <ul class="full-info-conatainer-content-info-block">
+                                            <li class="full-info-conatainer-content-info-block-list">
+                                                <span class="full-info-conatainer-content-info-block-list-left">Platforms</span>
+                                                <span class="full-info-conatainer-content-info-block-list-right" id="platform-set-2"></span>
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="restricted-right">
+                            <ul class="restricted-traffic">
+                                <h6 class="restricted-traffic-title">Restricted traffic</h6>
+                                <ul class="restricted-traffic-content">
+                                    <li class="restricted-traffic-content-list"><i class="fa fa-close text-red pd-right-1"></i>Adult traffic</li>
+                                    <li class="restricted-traffic-content-list"><i class="fa fa-close text-red pd-right-1"></i>Incentivized traffic</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-info-footer">
+                    <button class="btn-full-info close-btn" id="close-btn"><i class="fa fa-close pd-right"></i> Close</button>
+                    <button class="btn-full-info off-detail" id="getDetail"><i class="fa fa-bars pd-right"></i> Offer details</button>
+                    <button class="btn-full-info request-offer"><i class="fa fa-shopping-cart pd-right"></i> Request offer</button>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/detect.js"></script>
+        <script src="../assets/js/fastclick.js"></script>
+        <script src="../assets/js/jquery.slimscroll.js"></script>
+        <script src="../assets/js/jquery.blockUI.js"></script>
+        <script src="../assets/js/waves.js"></script>
+        <script src="../assets/js/jquery.nicescroll.js"></script>
+        <script src="../assets/js/jquery.slimscroll.js"></script>
+        <script src="../assets/js/jquery.scrollTo.min.js"></script>
+        
+        <!-- KNOB JS -->
+        <!--[if IE]>
+        <script type="text/javascript" src="../assets/plugins/jquery-knob/excanvas.js"></script>
+        <![endif]-->
+        <script src="../assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+        <!--Morris Chart-->
+        <script src="../assets/plugins/morris/morris.min.js"></script>
+        <script src="../assets/plugins/raphael/raphael-min.js"></script>
+
+        <!-- Dashboard init -->
+        <!-- <script src="../assets/pages/jquery.dashboard.js"></script> -->
+
+        <!-- App js -->
+        <script src="../assets/js/jquery.core.js"></script>
+        <script src="../assets/js/jquery.app.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script> -->
+        <!-- <script src="./../assets/js/customs/offerList.js"></script> -->
+        <!-- <script>
+            $("a[href = 'liveoffer']").addClass('active');
+            $(`.page-${window.location.search.split("page=")[1].split("&")[0]}`).addClass('active')
+        </script>
+        <script src="../javascripts/goToTop.js"></script> -->
+    </body>
+</html>
